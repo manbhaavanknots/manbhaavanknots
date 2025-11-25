@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Manbhaavanknots - Get in Touch</title>
+  <meta name="description" content="Get in touch with Manbhaavanknots for orders, custom work, or any queries about our handmade crochet accessories.">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff9ad0;
+      --primary-dark: #ff9ad0;
+      --secondary: #ffffff;
+      --dark: #000000;
+      --light: #ffffff;
+      --text: #000000;
+      --text-light: #000000;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --radius: 8px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    .site-header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--primary);
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .main-nav a:hover::after,
+    .main-nav a.active::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Contact Hero */
+    .contact-hero {
+      background: linear-gradient(135deg, var(--light) 0%, #fff5fa 100%);
+      padding: 5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff9ad0" opacity="0.1" d="M30,30 Q50,10 70,30 T90,50 T70,70 T50,90 T30,70 T10,50 T30,30 Z"/></svg>');
+      background-size: 200px;
+      opacity: 0.3;
+    }
+
+    .contact-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-hero h1 {
+      font-size: 3.5rem;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text-light);
+    }
+
+    /* Contact Actions */
+    .contact-actions {
+      padding: 5rem 0;
+    }
+
+    .contact-actions .container {
+      max-width: 800px;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      border: 2px solid transparent;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+      border-color: var(--primary);
+    }
+
+    .contact-card.whatsapp:hover {
+      background-color: #25D366;
+      color: white;
+    }
+
+    .contact-card.instagram:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+    }
+
+    .contact-card.email:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .contact-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card p {
+      color: var(--text-light);
+      margin-bottom: 0;
+    }
+
+    .contact-card.whatsapp:hover p,
+    .contact-card.instagram:hover p,
+    .contact-card.email:hover p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      background-color: var(--light);
+      padding: 5rem 0;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--dark);
+      position: relative;
+    }
+
+    .faq-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .faq-grid {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 1.5rem 1.5rem;
+      max-height: 200px;
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    /* Response Time */
+    .response-time {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .response-time h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #2a2a2a;
+      color: #f5f5f5;
+      padding: 3rem 0 2rem;
+      border-top: 4px solid var(--primary);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-logo {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-left p {
+      color: #e0e0e0;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-right a {
+      color: #f5f5f5;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .footer-right a:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .footer-right a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .footer-right a:hover::after {
+      width: 100%;
+    }
+
+    .site-footer::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      margin-top: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        gap: 1rem;
+      }
+
+      .main-nav.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .contact-hero {
+        padding: 3rem 0;
+      }
+
+      .contact-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .contact-hero p {
+        font-size: 1.1rem;
+      }
+
+      .contact-actions {
+        padding: 3rem 0;
+      }
+
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-section {
+        padding: 3rem 0;
+      }
+
+      .faq-section h2 {
+        font-size: 2rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .footer-left {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="assets/logo.jpg" alt="Manbhaavanknots" class="logo">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="container">
+        <h1>Get In Touch</h1>
+        <p>We'd love to hear from you! Reach out for orders, custom work, or any questions about our handmade creations.</p>
+      </div>
+    </section>
+
+    <section class="contact-actions">
+      <div class="container">
+        <div class="contact-cards">
+          <a class="contact-card whatsapp" href="https://wa.me/+919930910006" target="_blank">
+            <div class="contact-icon">💬</div>
+            <h3>WhatsApp</h3>
+            <p>Fastest way to order or inquire about products. We typically respond within minutes during business hours.</p>
+          </a>
+
+          <a class="contact-card instagram" href="https://www.instagram.com/manbhaavanknots/" target="_blank">
+            <div class="contact-icon">📷</div>
+            <h3>Instagram</h3>
+            <p>DM us for styling advice, custom orders, or to see more of our latest creations.</p>
+          </a>
+
+          <a class="contact-card email" href="mailto:info@manbhaavanknots.example">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <p>For detailed inquiries, wholesale requests, or partnership opportunities.</p>
+          </a>
+        </div>
+
+        <div class="response-time">
+          <h3>Our Response Time</h3>
+          <p>We strive to respond to all messages within 2-4 hours during our business hours (10 AM - 8 PM IST).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              How long does shipping take?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>We process orders within 1-2 business days. Standard shipping takes 3-5 business days within India. Express options are available.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you accept custom orders?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We love creating custom pieces. Contact us with your ideas, color preferences, and any specific requirements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What payment methods do you accept?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>We accept UPI, bank transfers, and other digital payment methods. Payment details are shared when you place your order.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I return or exchange an item?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Due to the handmade nature of our products, we don't accept returns. However, if there's any issue with your order, please contact us immediately.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you offer gift wrapping?
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! All our items come beautifully packaged, ready for gifting. Let us know if you have any special requests.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="assets/logo.jpg" class="footer-logo" alt="Manbhaavanknots">
+        <p>© 2025 Manbhaavanknots. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="contact.html">Contact</a>
+        <a href="https://www.instagram.com/manbhaavanknots/" target="_blank">Instagram</a>
+        <a href="https://wa.me/+919930910006" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.querySelector('.main-nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // FAQ toggle functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        // Close all other FAQ items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

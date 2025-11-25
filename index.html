@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manbhaavanknots - Handmade Crochet Accessories</title>
+  <meta name="description" content="Beautiful handmade crochet keychains, scrunchies & hair accessories crafted with love. Unique designs, quality materials.">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff9ad0;
+      --primary-dark: #ff9ad0;
+      --secondary: #ffffff;
+      --dark: #000000;
+      --light: #ffffff;
+      --text: #000000;
+      --text-light: #000000;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --radius: 8px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    .site-header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .main-nav a:hover {
+      color: var(--primary);
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .main-nav a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--light) 0%, #f0e6e0 100%);
+      padding: 5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23e8b4bc" opacity="0.1" d="M30,30 Q50,10 70,30 T90,50 T70,70 T50,90 T30,70 T10,50 T30,30 Z"/></svg>');
+      background-size: 200px;
+      opacity: 0.3;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-title {
+      font-size: 3.5rem;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-light);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .btn.primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .btn.primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn.ghost {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn.ghost:hover {
+      background-color: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--dark);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    /* Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .cat-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .cat-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .cat-card h3 {
+      padding: 1rem 1.5rem 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .cat-card p {
+      padding: 0 1.5rem 1.5rem;
+      color: var(--text-light);
+    }
+
+    .product-card {
+      text-align: center;
+      padding-bottom: 1.5rem;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-card h3 {
+      padding: 1rem 1rem 0.5rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    /* About CTA */
+    .about-cta {
+      background-color: var(--light);
+      text-align: center;
+    }
+
+    .about-cta-inner {
+      max-width: 800px;
+    }
+
+    .about-cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: var(--text-light);
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--dark);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-right a {
+      color: var(--white);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-right a:hover {
+      color: var(--primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        gap: 1rem;
+      }
+
+      .main-nav.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding: 3rem 0;
+      }
+
+      .brand-title {
+        font-size: 2.5rem;
+      }
+
+      .lead {
+        font-size: 1.1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="assets/logo.jpg" alt="Manbhaavanknots" class="logo">
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1 class="brand-title">Manbhaavanknots</h1>
+        <p class="lead">Handmade crochet keychains, scrunchies & hair accessories crafted with love and attention to detail.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="shop.html">Shop Collection</a>
+          <a class="btn ghost" href="https://wa.me/+919930910006?text=Hi!%20I%20want%20to%20order%20from%20Manbhaavanknots" target="_blank">Order on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-preview">
+      <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="cards-grid">
+          <a class="card cat-card" href="keychains.html">
+            <img src="assets/images/keychains-thumb.jpg" alt="Keychains">
+            <h3>Keychains</h3>
+            <p>Adorable crochet charms & plush minis to brighten your keys</p>
+          </a>
+
+          <a class="card cat-card" href="scrunchies.html">
+            <img src="assets/images/scrunchies-thumb.jpg" alt="Scrunchies">
+            <h3>Scrunchies</h3>
+            <p>Soft yarn scrunchies in beautiful colors for every style</p>
+          </a>
+
+          <a class="card cat-card" href="hair-accessories.html">
+            <img src="assets/images/hair-thumb.jpg" alt="Hair accessories">
+            <h3>Hair Accessories</h3>
+            <p>Elegant clips, bows & floral bands to complete your look</p>
+          </a>
+          <a class="card cat-card" href="earrings.html">
+            <img src="assets/images/earring-thumb.jpg" alt="Earrings">
+            <h3>Earrings</h3>
+            <p>Lightweight crochet earrings crafted with love for every occasion</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="cards-grid">
+          <article class="card product-card">
+            <img src="assets/images/sample1.jpg" alt="Flower Keychain">
+            <h3>Flower Keychain</h3>
+            <p class="price">₹50</p>
+            <a class="btn primary" href="https://wa.me/+919930910006?text=I%20want%20to%20order:%20Pink%20Flower%20Keychain" target="_blank">Order Now</a>
+          </article>
+
+          <article class="card product-card">
+            <img src="assets/images/sample2.jpg" alt="Scrunchie">
+            <h3>Scrunchie</h3>
+            <p class="price">₹80</p>
+            <a class="btn primary" href="https://wa.me/+919930910006?text=I%20want%20to%20order:%20Scrunchie" target="_blank">Order Now</a>
+          </article>
+
+          <article class="card product-card">
+            <img src="assets/images/sample3.jpg" alt="Hair Clip">
+            <h3>Hair Clip</h3>
+            <p class="price">₹60</p>
+            <a class="btn primary" href="https://wa.me/+919930910006?text=I%20want%20to%20order:%20Floral%20Hair%20Clip" target="_blank">Order Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <div class="container about-cta-inner">
+        <h2>Crafted With Love & Care</h2>
+        <p>Each Manbhaavanknots piece is thoughtfully handcrafted using premium, skin-friendly yarns. We pay attention to every stitch and detail, creating unique accessories that bring joy to everyday life. Our items come beautifully packaged, ready for gifting or personal indulgence.</p>
+        <a class="btn ghost" href="about.html">Our Story</a>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <img src="assets/logo.jpg" class="footer-logo" alt="Manbhaavanknots">
+      <p>© 2025 Manbhaavanknots. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.instagram.com/manbhaavanknots/" target="_blank">Instagram</a>
+      <a href="https://wa.me/+919930910006" target="_blank">WhatsApp</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+    });
+  </script>
+</body>
+</html>

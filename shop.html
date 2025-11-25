@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop All Products - Manbhaavanknots</title>
+  <meta name="description" content="Browse all handmade crochet products from Manbhaavanknots - keychains, scrunchies, hair accessories and more.">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff9ad0;
+      --primary-dark: #ff9ad0;
+      --secondary: #ffffff;
+      --dark: #000000;
+      --light: #ffffff;
+      --text: #000000;
+      --text-light: #000000;
+      --white: #ffffff;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --radius: 8px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    .site-header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--primary);
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .main-nav a:hover::after,
+    .main-nav a.active::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Shop Hero */
+    .shop-hero {
+      background: linear-gradient(135deg, var(--light) 0%, #fff5fa 100%);
+      padding: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shop-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff9ad0" opacity="0.1" d="M30,30 Q50,10 70,30 T90,50 T70,70 T50,90 T30,70 T10,50 T30,30 Z"/></svg>');
+      background-size: 200px;
+      opacity: 0.3;
+    }
+
+    .shop-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .shop-hero h1 {
+      font-size: 3rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .shop-hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      color: var(--text-light);
+    }
+
+    .shop-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      text-align: center;
+    }
+
+    .btn.primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .btn.primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn.card-link {
+      background-color: var(--white);
+      color: var(--text);
+      border: 2px solid var(--primary);
+    }
+
+    .btn.card-link:hover {
+      background-color: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    /* Shop Section */
+    .shop-all {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--dark);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    /* Product Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card {
+      text-align: center;
+      padding-bottom: 1.5rem;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .product-card h3 {
+      padding: 1rem 1rem 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Filter Section */
+    .shop-filters {
+      background-color: var(--light);
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+    }
+
+    .filter-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .sort-select {
+      padding: 0.5rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      font-family: inherit;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #2a2a2a;
+      color: #f5f5f5;
+      padding: 3rem 0 2rem;
+      border-top: 4px solid var(--primary);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-logo {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-left p {
+      color: #e0e0e0;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-right a {
+      color: #f5f5f5;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+
+    .footer-right a:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .footer-right a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .footer-right a:hover::after {
+      width: 100%;
+    }
+
+    .site-footer::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      margin-top: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        gap: 1rem;
+      }
+
+      .main-nav.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .shop-hero {
+        padding: 3rem 0;
+      }
+
+      .shop-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .shop-hero p {
+        font-size: 1.1rem;
+      }
+
+      .shop-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .shop-all {
+        padding: 3rem 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .footer-left {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-wrap">
+        <img src="assets/logo.jpg" alt="Manbhaavanknots" class="logo">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="shop-hero">
+      <div class="container">
+        <h1>Shop All Products</h1>
+        <p>Discover our complete collection of handmade crochet accessories, each crafted with love and attention to detail.</p>
+        <div class="shop-links">
+          <a class="btn card-link" href="keychains.html">Keychains</a>
+          <a class="btn card-link" href="scrunchies.html">Scrunchies</a>
+          <a class="btn card-link" href="hair-accessories.html">Hair Accessories</a>
+          <a class="btn card-link" href="Earrings.html">Earrings</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-filters">
+      <div class="container filter-container">
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">All Products</button>
+          <button class="filter-btn" data-filter="keychain">Keychains</button>
+          <button class="filter-btn" data-filter="scrunchie">Scrunchies</button>
+          <button class="filter-btn" data-filter="hair">Hair Accessories</button>
+        </div>
+        <div class="sort-group">
+          <select class="sort-select" id="sortSelect">
+            <option value="featured">Sort by: Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-all">
+      <div class="container">
+        <h2 class="section-title">All Products</h2>
+        <div class="cards-grid" id="productsGrid">
+          <!-- Product 1 -->
+          <article class="card product-card" data-category="keychain">
+            <img src="assets/images/sample1.jpg" alt="Floral Keychain">
+            <h3>Floral Keychain</h3>
+            <p class="price">₹50</p>
+            <a class="btn primary" href="https://wa.me/+919930910006?text=I%20want%20to%20order:%20Floral%20Keychain" target="_blank">Order Now</a>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="card product-card" data-category="scrunchie">
+            <img src="assets/images/sample2.jpg" alt="Scrunchie">
+            <h3>Scrunchie</h3>
+            <p class="price">₹80</p>
+            <a class="btn primary" href="https://wa.me/+919930910006?text=I%20want%20to%20order:%20Scrunchie" target="_blank">Order Now</a>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="card product-card" data-category="hair">
+            <img src="assets/images/sample3.jpg" alt="Floral Hair Clip">
+            <h3>Floral Hair Clip</h3>
+            <p class="price">₹60</p>
+            <a class="btn primary" href="https://wa.me/+919930910006?text=I%20want%20to%20order:%20Floral%20Hair%20Clip" target="_blank">Order Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <img src="assets/logo.jpg" class="footer-logo" alt="Manbhaavanknots">
+        <p>© 2025 Manbhaavanknots. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://www.instagram.com/manbhaavanknots/" target="_blank">Instagram</a>
+        <a href="https://wa.me/+919930910006" target="_blank">WhatsApp</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.querySelector('.main-nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      mobileMenuBtn.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filterValue = btn.getAttribute('data-filter');
+        
+        // Show/hide products based on filter
+        productCards.forEach(card => {
+          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Sort functionality
+    const sortSelect = document.getElementById('sortSelect');
+    const productsGrid = document.getElementById('productsGrid');
+    
+    sortSelect.addEventListener('change', () => {
+      const sortValue = sortSelect.value;
+      const products = Array.from(productCards);
+      
+      // Simple sorting logic (in a real app, you'd have more complex sorting)
+      if (sortValue === 'price-low') {
+        products.sort((a, b) => {
+          const priceA = parseInt(a.querySelector('.price').textContent.replace('₹', ''));
+          const priceB = parseInt(b.querySelector('.price').textContent.replace('₹', ''));
+          return priceA - priceB;
+        });
+      } else if (sortValue === 'price-high') {
+        products.sort((a, b) => {
+          const priceA = parseInt(a.querySelector('.price').textContent.replace('₹', ''));
+          const priceB = parseInt(b.querySelector('.price').textContent.replace('₹', ''));
+          return priceB - priceA;
+        });
+      }
+      
+      // Clear and re-append sorted products
+      productsGrid.innerHTML = '';
+      products.forEach(product => {
+        productsGrid.appendChild(product);
+      });
+    });
+  </script>
+</body>
+</html>
